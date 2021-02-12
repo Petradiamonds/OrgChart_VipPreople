@@ -1,7 +1,9 @@
 
+var param = window.location.search.substring(1);
+console.log(param);
 var params = {
     selector: "#svgChart",
-    dataLoadUrl: "GetData.php?CN=10000133&LV_DEEP=3",
+    dataLoadUrl: "GetData.php?" + param,
     chartWidth: window.innerWidth - 40,
     chartHeight: window.innerHeight - 40,
     funcs: {
@@ -74,7 +76,7 @@ function drawOrganizationChart(params) {
     var tree = d3.layout.tree().nodeSize([attrs.nodeWidth + 40, attrs.nodeHeight]);
     var diagonal = d3.svg.diagonal()
         .projection(function (d) {
-            debugger;
+            // debugger;
             return [d.x + attrs.nodeWidth / 2, d.y + attrs.nodeHeight / 2];
         });
 
@@ -972,4 +974,27 @@ function drawOrganizationChart(params) {
     }
 
 
+}
+
+function sPrint() {
+    //get svg element.
+    let popupWinindow;
+    let innerContents = document.getElementById("svgChart").innerHTML;
+    // console.log(innerContents);
+    popupWinindow = window.open('', '_blank',);
+    popupWinindow.document.open();
+    popupWinindow.document.write('<html><head><meta charset="UTF-8"><title> Company Employees Hierarchy Chart </title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" > <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Roboto"><link rel="stylesheet" href="style.css"><body onload="window.print()">' + innerContents + '</html>');
+    popupWinindow.document.close();
+
+}
+
+function sSave() {
+    html2canvas(document.querySelector("#svgChart")).then(canvas => {
+        var pic = canvas.toDataURL("PNG");
+        popupWinindow = window.open('', '_blank',);
+        popupWinindow.document.open();
+        popupWinindow.document.location = "#";
+        popupWinindow.document.write('<html><head><meta charset="UTF-8"><title> Company Employees Hierarchy Chart </title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" > <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Roboto"><link rel="stylesheet" href="style.css"><body><img src="' + pic + '"></html>');
+        popupWinindow.document.close();
+    });
 }

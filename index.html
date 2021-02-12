@@ -14,22 +14,26 @@
 
 <body translate="no">
    <form class="form" method="get">
-      <label class="rounded-input" for="CN">Start CN:</label>
+      <label class="rounded-lable" for="CN">Start CN:</label>
       <input class="rounded-input" type="number" name="CN" value="10000106">
 
-      <label class="rounded-input" for="LV_DEEP">Levels Deep:</label>
+      <label class="rounded-lable" for="LV_DEEP">Levels Deep:</label>
       <select class="rounded-input" name="LV_DEEP">
          <option value="1">1 Level</option>
          <option value="2">2 Level</option>
          <option value="3">3 Level</option>
       </select>
-      <button class="rounded-input" type="submit">Load</button>
+      <button class="rounded-btn" type="submit">Load</button>
    </form>
    <div id="full-container">
       <button class="btn-action btn-fullscreen" onclick="params.funcs.toggleFullScreen()">Fullscreen <span
             class='icon' /> <i class="fa fa-arrows-alt" aria-hidden="true"></i></span></button>
-      <!-- <button class="btn-action btn-show-my-self" onclick="params.funcs.showMySelf()"> Show myself <span class='icon' />
-         <i class="fa fa-user" aria-hidden="true"></i></span></button> -->
+
+      <button class="btn-action btn-show-print" onclick="sPrint()"> print <span class='icon' />
+         <i class="fa fa-print" aria-hidden="true"></i></span></button>
+
+      <button class="btn-action btn-show-save" onclick="sSave()"> Save <span class='icon' />
+         <i class="fa fa-save" aria-hidden="true"></i></span></button>
 
       <button class=" btn-action btn-search" onclick="params.funcs.search()"> Search <span class='icon' /> <i
             class="fa fa-search" aria-hidden="true"></i></span></button>
@@ -72,6 +76,7 @@
    </div>
 
    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+   <script src="html2canvas.min.js"></script>
    <script src="app.js"></script>
 
 </body>
