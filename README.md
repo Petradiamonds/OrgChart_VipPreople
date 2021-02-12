@@ -21,7 +21,7 @@
 [!["Last Updated"](https://img.shields.io/github/last-commit/HermanRas/OrgChart_VipPeople.svg)](https://github.com/HermanRas/OrgChart_VipPeople/releases)
 
 ### Requirements
- - [!["PHP 7.2"](https://img.shields.io/badge/PHP-7.2%5E-blue.svg)](https://www.php.net/)(php7.2-xml, php7.2-mbstring, php7.2-zip)
+ - [!["PHP 7.2"](https://img.shields.io/badge/PHP-7.2%5E-blue.svg)](https://www.php.net/)
  - [!["JavaScript"](https://img.shields.io/badge/JavaScript-1.8%5E-blue.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [!["MSSQL 2016"](https://img.shields.io/badge/MSSQL-2016%5E-blue.svg)](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 [!["HTML 5"](https://img.shields.io/badge/HTML-5-blue.svg)](https://html5test.com/results/desktop.html)
@@ -38,9 +38,14 @@
 
 ## ChangeLog
 - DONE 2021-02-12 Setup Repo
+- DONE 2021-02-12 Added PHP Object API for empoyees
+- DONE 2021-02-12 Added Company Number Filter
+- DONE 2021-02-12 Added Levels Deep Filter
+- DONE 2021-02-12 Added Save to File
+- DONE 2021-02-12 Added Print
 
-## To-Do Induction
-- NONE
+## To-Do
+- Create Position Filter
 
 ## Look-At-Implementing
 - NONE
