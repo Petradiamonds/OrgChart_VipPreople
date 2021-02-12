@@ -1,7 +1,7 @@
 
 var params = {
     selector: "#svgChart",
-    dataLoadUrl: "redesignedChartLongData.json",
+    dataLoadUrl: "GetData.php?CN=10000133&LV_DEEP=3",
     chartWidth: window.innerWidth - 40,
     chartHeight: window.innerHeight - 40,
     funcs: {
