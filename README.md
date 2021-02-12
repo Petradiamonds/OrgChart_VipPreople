@@ -1,5 +1,5 @@
 # OrgChar VipPeople
-<img src="https://github.com/HermanRas/OrgChart_VipPeople/blob/main/img/Logo.jpg" alt="#PetraLogo">
+<img src="https://raw.githubusercontent.com/HermanRas/OrgChart_VipPreople/main/img/Logo.jpg" alt="#PetraLogo">
 
 ## Issues Tracking
 ### Issues Tracking: Total Logged !
