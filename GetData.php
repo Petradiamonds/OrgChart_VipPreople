@@ -1,23 +1,27 @@
 <?php
-
 function AddChildren($root){
         // get children
-        $CN = $root['CN'];
+        $PositionCode = $root['PositionCode'];
         $root['children'] = [];
-        $sql = "SELECT
-            vVIPData.Operation As Operation1,
-            vVIPData.CompanyNumber,
-            vVIPData.KnownAs,
-            vVIPData.FirstNames,
-            vVIPData.LastName,
-            vVIPData.JobTitle,
-            vVIPData.ReportsToEmployeeDisplay,
-            vVIPData.ReportToEmployeeCode,
-            vVIPData.TerminationDate,
-            vVIPData.Department
-            From
-            vVIPData
-            WHERE ReportToEmployeeCode = '$CN';";
+        $sql = "SELECT DISTINCT 
+                    ID,
+                    ReportsToID,
+                    PositionCode,
+                    PositionLongDescription,
+                    VacancyDate,
+                    Name, PositionStatus,
+                    HierarchyNameG AS Department,
+                    JobTitle,
+                    CompanyCode,
+                    CompanyDisplay,
+                    CompanyRuleDescription,
+                    EmployeeCode,
+                    ReportsToPositionCode, 
+                    ReportsToEmployeeName,
+                    ReportToEmployeeCode,
+                    ReportsToCompanyCode
+                FROM      Employee.OrganizationalHierarchyView
+                WHERE     ReportsToPositionCode = '$PositionCode';";
         $sqlargs = array();
         require_once 'config/db_query.php'; 
         $children =  sqlQuery($sql,$sqlargs);
@@ -25,19 +29,20 @@ function AddChildren($root){
         // loop tru children
         foreach ($children[0] as $child) {
             $child  = [
-            "name" => $child['KnownAs'] . ' ' . $child['LastName'],
-            "CN" => $child['CompanyNumber'],
+            "name" => ($child['Name'] ? $child['Name'] : 'Vacant'),
+            "CN" => $child['CompanyCode'],
+            "PositionCode" => $child['PositionCode'],
             "imageUrl" => "img/Profile-Icon.png",
             "area" => $child['Department'],
             "profileUrl"=> "http://example.com/employee/profile",
             "office"=> "office name here",
-            "tags"=> $child['CompanyNumber'],
+            "tags"=> $child['PositionCode'],
             "isLoggedUser"=> false,
             "unit"=> [
-                "type"=> "CostCentre",
-                "value"=> "GCXL1000123"
+                "type"=> "business",
+                "value"=> $child['VacancyDate']." ".$child['PositionStatus'],
             ],
-            "positionName" => $child['JobTitle']
+            "positionName" => $child['JobTitle'],
             ];
             array_push($root['children'],$child);
         }
@@ -46,42 +51,48 @@ function AddChildren($root){
 
 
 // If Company number and level is set
-if (isset($_GET['CN']) && isset($_GET['LV_DEEP']) )
+if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
     {
-        $CN = $_GET['CN'];
         $LV_DEEP = $_GET['LV_DEEP'];
-
+        $PositionCode = $_GET['PositionCode'];
         //SQL Connect and generate JSON for root.
-        $sql = "SELECT
-                vVIPData.Operation As Operation1,
-                vVIPData.CompanyNumber,
-                vVIPData.KnownAs,
-                vVIPData.FirstNames,
-                vVIPData.LastName,
-                vVIPData.JobTitle,
-                vVIPData.ReportsToEmployeeDisplay,
-                vVIPData.ReportToEmployeeCode,
-                vVIPData.TerminationDate,
-                vVIPData.Department
-                From
-                vVIPData
-                WHERE CompanyNumber = '$CN';";
+        $sql = "SELECT TOP(1) 
+                    ID,
+                    ReportsToID,
+                    PositionCode,
+                    PositionLongDescription,
+                    VacancyDate,
+                    Name, PositionStatus,
+                    HierarchyNameG AS Department,
+                    JobTitle,
+                    CompanyCode,
+                    CompanyDisplay,
+                    CompanyRuleDescription,
+                    EmployeeCode,
+                    ReportsToPositionCode, 
+                    ReportsToEmployeeName,
+                    ReportToEmployeeCode,
+                    ReportsToCompanyCode
+                FROM    Employee.OrganizationalHierarchyView
+                WHERE   (PositionCode = '$PositionCode');";
         $sqlargs = array();
         require_once 'config/db_query.php'; 
         $rootRS =  sqlQuery($sql,$sqlargs);
+        // var_dump($rootRS);
 
         $root = [
-            "name" => $rootRS[0][0]['KnownAs'] . ' ' . $rootRS[0][0]['LastName'],
-            "CN" => $rootRS[0][0]['CompanyNumber'],
+            "name" => $rootRS[0][0]['Name'],
+            "CN" => $rootRS[0][0]['CompanyCode'],
+            "PositionCode" => $rootRS[0][0]['PositionCode'],
             "imageUrl" => "img/Profile-Icon.png",
             "area" => $rootRS[0][0]['Department'],
             "profileUrl"=> "http://example.com/employee/profile",
             "office"=> "office name here",
-            "tags"=> $rootRS[0][0]['CompanyNumber'],
+            "tags"=> $rootRS[0][0]['PositionCode'],
             "isLoggedUser"=> false,
             "unit"=> [
                 "type"=> "business",
-                "value"=> "GCXL1000123"
+                "value"=> $rootRS[0][0]['VacancyDate']." ".$rootRS[0][0]['PositionStatus'],
             ],
             "positionName" => $rootRS[0][0]['JobTitle'],
             "children"=> []
