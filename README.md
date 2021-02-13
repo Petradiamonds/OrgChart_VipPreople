@@ -1,4 +1,4 @@
-# OrgChar VipPeople
+# OrgChart VipPeople
 <img src="https://raw.githubusercontent.com/HermanRas/OrgChart_VipPreople/main/img/Logo.jpg" alt="#PetraLogo">
 
 ## Issues Tracking
