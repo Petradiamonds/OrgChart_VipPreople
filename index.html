@@ -14,22 +14,15 @@
 </head>
 
 <body translate="no" onload="getFilters()">
-   <form class="form" method="get">
+   <select class="rounded-input" id="LV_DEEP">
+      <option value="1">1 Level</option>
+      <option value="2">2 Level</option>
+      <option value="3">3 Level</option>
+   </select>
+   <select class="rounded-input" id="CN" onchange="update(this)"></select>
+   <select class="rounded-input" id="PC" onchange="update(this)"></select>
+   <select class="rounded-input" id="Name" onchange="update(this)"></select>
 
-      <label class="rounded-lable" for="LV_DEEP">Levels Deep:</label><br><br>
-      <select class="rounded-input" id="LV_DEEP">
-         <option value="1">1 Level</option>
-         <option value="2">2 Level</option>
-         <option value="3">3 Level</option>
-      </select><br><br>
-
-      <label class="rounded-lable" for="CN">Start Position:</label><br><br>
-      <select class="rounded-input" id="CN" onchange="update(this)"></select><br><br>
-      <select class="rounded-input" id="PC" onchange="update(this)"></select><br><br>
-      <select class="rounded-input" id="Name" onchange="update(this)"></select><br><br>
-
-      <button class="rounded-btn" type="submit">Load</button>
-   </form>
    <div id="full-container">
       <button class="btn-action btn-fullscreen" onclick="params.funcs.toggleFullScreen()">Fullscreen <span
             class='icon' /> <i class="fa fa-arrows-alt" aria-hidden="true"></i></span></button>
