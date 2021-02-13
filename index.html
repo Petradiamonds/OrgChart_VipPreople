@@ -9,20 +9,25 @@
    <link rel='stylesheet prefetch'
       href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css'>
    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto'>
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="css/style.css">
+   <script src="js/filters.js"></script>
 </head>
 
-<body translate="no">
+<body translate="no" onload="getFilters()">
    <form class="form" method="get">
-      <label class="rounded-lable" for="CN">Start Position:</label>
-      <input class="rounded-input" type="text" name="PositionCode" value="GITMA001">
 
-      <label class="rounded-lable" for="LV_DEEP">Levels Deep:</label>
-      <select class="rounded-input" name="LV_DEEP">
+      <label class="rounded-lable" for="LV_DEEP">Levels Deep:</label><br><br>
+      <select class="rounded-input" id="LV_DEEP">
          <option value="1">1 Level</option>
          <option value="2">2 Level</option>
          <option value="3">3 Level</option>
-      </select>
+      </select><br><br>
+
+      <label class="rounded-lable" for="CN">Start Position:</label><br><br>
+      <select class="rounded-input" id="CN" onchange="update(this)"></select><br><br>
+      <select class="rounded-input" id="PC" onchange="update(this)"></select><br><br>
+      <select class="rounded-input" id="Name" onchange="update(this)"></select><br><br>
+
       <button class="rounded-btn" type="submit">Load</button>
    </form>
    <div id="full-container">
@@ -77,7 +82,7 @@
 
    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
    <script src="html2canvas.min.js"></script>
-   <script src="app.js"></script>
+   <script src="js/app.js"></script>
 
 </body>
 

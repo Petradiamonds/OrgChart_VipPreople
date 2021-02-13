@@ -1,7 +1,9 @@
 <?php
         //SQL Connect and generate JSON
         $sql = "SELECT DISTINCT Name,PositionCode
-                FROM    Employee.OrganizationalHierarchyView";
+                FROM    Employee.OrganizationalHierarchyView
+                WHERE Name IS NOT NULL
+                ORDER BY Name;";
 
         $sqlargs = array();
         require_once 'config/db_query.php'; 
