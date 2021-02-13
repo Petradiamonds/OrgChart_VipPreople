@@ -9,7 +9,8 @@ function AddChildren($root){
                     PositionCode,
                     PositionLongDescription,
                     VacancyDate,
-                    Name, PositionStatus,
+                    Name,
+                    PositionStatus,
                     HierarchyNameG AS Department,
                     JobTitle,
                     CompanyCode,
@@ -30,7 +31,7 @@ function AddChildren($root){
         foreach ($children[0] as $child) {
             $child  = [
             "name" => ($child['Name'] ? $child['Name'] : 'Vacant'),
-            "CN" => $child['CompanyCode'],
+            "CN" => $child['EmployeeCode'],
             "PositionCode" => $child['PositionCode'],
             "imageUrl" => "img/Profile-Icon.png",
             "area" => $child['Department'],
@@ -62,7 +63,8 @@ if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
                     PositionCode,
                     PositionLongDescription,
                     VacancyDate,
-                    Name, PositionStatus,
+                    Name,
+                    PositionStatus,
                     HierarchyNameG AS Department,
                     JobTitle,
                     CompanyCode,
@@ -82,7 +84,7 @@ if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
 
         $root = [
             "name" => $rootRS[0][0]['Name'],
-            "CN" => $rootRS[0][0]['CompanyCode'],
+            "CN" => $rootRS[0][0]['EmployeeCode'],
             "PositionCode" => $rootRS[0][0]['PositionCode'],
             "imageUrl" => "img/Profile-Icon.png",
             "area" => $rootRS[0][0]['Department'],
