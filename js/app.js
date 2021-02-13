@@ -1,6 +1,5 @@
 
 var param = window.location.search.substring(1);
-console.log(param);
 var params = {
     selector: "#svgChart",
     dataLoadUrl: "GetData.php?" + param,
