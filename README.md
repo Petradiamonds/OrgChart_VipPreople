@@ -3,22 +3,22 @@
 
 ## Issues Tracking
 ### Issues Tracking: Total Logged !
- - [![Open Issues](https://img.shields.io/github/issues/HermanRas/OrgChart_VipPeople.svg)](https://github.com/HermanRas/OrgChart_VipPeople/issues)
-[!["Closed Issues"](https://img.shields.io/github/issues-closed/HermanRas/OrgChart_VipPeople.svg?style=flat-square)](https://github.com/HermanRas/OrgChart_VipPeople/issues)
+ - [![Open Issues](https://img.shields.io/github/issues/HermanRas/OrgChart_VipPreople.svg)](https://github.com/HermanRas/OrgChart_VipPreople/issues)
+[!["Closed Issues"](https://img.shields.io/github/issues-closed/HermanRas/OrgChart_VipPreople.svg?style=flat-square)](https://github.com/HermanRas/OrgChart_VipPreople/issues)
 ### Issues Tracking: by type
- - [!["To Do"](https://img.shields.io/github/issues/HermanRas/OrgChart_VipPeople/help%20wanted.svg)](https://github.com/HermanRas/OrgChart_VipPeople/labels/help%20wanted)
-[!["Look At"](https://img.shields.io/github/issues/HermanRas/OrgChart_VipPeople/enhancement.svg)](https://github.com/HermanRas/OrgChart_VipPeople/labels/enhancement)
-[!["Open Bug"](https://img.shields.io/github/issues/HermanRas/OrgChart_VipPeople/bug.svg)](https://github.com/HermanRas/OrgChart_VipPeople/labels/bug)
-[!["Confirm Scope"](https://img.shields.io/github/issues/HermanRas/OrgChart_VipPeople/question.svg)](https://github.com/HermanRas/OrgChart_VipPeople/labels/question)
+ - [!["To Do"](https://img.shields.io/github/issues/HermanRas/OrgChart_VipPreople/help%20wanted.svg)](https://github.com/HermanRas/OrgChart_VipPreople/labels/help%20wanted)
+[!["Look At"](https://img.shields.io/github/issues/HermanRas/OrgChart_VipPreople/enhancement.svg)](https://github.com/HermanRas/OrgChart_VipPreople/labels/enhancement)
+[!["Open Bug"](https://img.shields.io/github/issues/HermanRas/OrgChart_VipPreople/bug.svg)](https://github.com/HermanRas/OrgChart_VipPreople/labels/bug)
+[!["Confirm Scope"](https://img.shields.io/github/issues/HermanRas/OrgChart_VipPreople/question.svg)](https://github.com/HermanRas/OrgChart_VipPreople/labels/question)
 
 ### Latest Release
- - [!["Latest Release"](https://img.shields.io/github/release/HermanRas/OrgChart_VipPeople.svg)](https://github.com/HermanRas/OrgChart_VipPeople/releases)
-[!["Release Date"](https://img.shields.io/github/release-date/HermanRas/OrgChart_VipPeople.svg)](https://github.com/HermanRas/OrgChart_VipPeople/releases)
+ - [!["Latest Release"](https://img.shields.io/github/release/HermanRas/OrgChart_VipPreople.svg)](https://github.com/HermanRas/OrgChart_VipPreople/releases)
+[!["Release Date"](https://img.shields.io/github/release-date/HermanRas/OrgChart_VipPreople.svg)](https://github.com/HermanRas/OrgChart_VipPreople/releases)
 
 ### Latest Dev Build
- - [!["Latest Release"](https://img.shields.io/github/release-pre/HermanRas/OrgChart_VipPeople.svg)](https://github.com/HermanRas/OrgChart_VipPeople/releases)
-[!["Release Date"](https://img.shields.io/github/release-date-pre/HermanRas/OrgChart_VipPeople.svg)](https://github.com/HermanRas/OrgChart_VipPeople/releases)
-[!["Last Updated"](https://img.shields.io/github/last-commit/HermanRas/OrgChart_VipPeople.svg)](https://github.com/HermanRas/OrgChart_VipPeople/releases)
+ - [!["Latest Release"](https://img.shields.io/github/release-pre/HermanRas/OrgChart_VipPreople.svg)](https://github.com/HermanRas/OrgChart_VipPreople/releases)
+[!["Release Date"](https://img.shields.io/github/release-date-pre/HermanRas/OrgChart_VipPreople.svg)](https://github.com/HermanRas/OrgChart_VipPreople/releases)
+[!["Last Updated"](https://img.shields.io/github/last-commit/HermanRas/OrgChart_VipPreople.svg)](https://github.com/HermanRas/OrgChart_VipPreople/releases)
 
 ### Requirements
  - [!["PHP 7.2"](https://img.shields.io/badge/PHP-7.2%5E-blue.svg)](https://www.php.net/)
