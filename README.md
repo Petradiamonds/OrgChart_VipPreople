@@ -43,9 +43,14 @@
 - DONE 2021-02-12 Added Levels Deep Filter
 - DONE 2021-02-12 Added Save to File
 - DONE 2021-02-12 Added Print
+- DONE 2021-02-13 Added User API
+- DONE 2021-02-13 Added Position Code API
+- DONE 2021-02-13 Added Employee Code API
+- DONE 2021-02-13 converted system form Company Number Link to Position Code Like
+- DONE 2021-02-13 made menu responsive with auto update
 
 ## To-Do
-- Create Position Filter
+- NONE
 
 ## Look-At-Implementing
 - NONE
