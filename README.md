@@ -48,9 +48,14 @@
 - DONE 2021-02-13 Added Employee Code API
 - DONE 2021-02-13 converted system form Company Number Link to Position Code Like
 - DONE 2021-02-13 made menu responsive with auto update
+- DONE 2021-03-26 updated color theme to match petra Colors
+- DONE 2021-03-26 Fix position name line rapping
 
 ## To-Do
 - NONE
 
 ## Look-At-Implementing
 - NONE
+
+
+https://phq-7hxllh2.petragroup.local/web_dev/DevTest/OrgChart_VipPreople/OrgChart.html?PositionCode=OCCHY002&LV_DEEP=2
