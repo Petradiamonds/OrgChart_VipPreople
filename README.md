@@ -38,7 +38,7 @@
 
 ## ChangeLog
 - DONE 2021-02-12 Setup Repo
-- DONE 2021-02-12 Added PHP Object API for empoyees
+- DONE 2021-02-12 Added PHP Object API for employees
 - DONE 2021-02-12 Added Company Number Filter
 - DONE 2021-02-12 Added Levels Deep Filter
 - DONE 2021-02-12 Added Save to File
