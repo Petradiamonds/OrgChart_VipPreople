@@ -216,6 +216,9 @@ function drawOrganizationChart(params) {
             .attr('class', 'emp-name')
             .attr("text-anchor", "left")
             .text(function (d) {
+                if (d.name.trim() == 'Vacant') {
+                    this.parentElement.children[0].classList.toggle("Vacant");
+                }
                 return d.name.trim();
             })
             .call(wrap, attrs.nodeWidth);
@@ -242,7 +245,17 @@ function drawOrganizationChart(params) {
             .attr("text-anchor", "left")
 
             .text(function (d) {
-                return d.area;
+                if (d.area) {
+                    var area = d.area.substring(0, 27);
+                    if (area.length < d.area.length) {
+                        area = area.substring(0, 24) + '...'
+                    }
+                    return area;
+                }
+                else {
+                    return d.area;
+                }
+
             })
 
         nodeGroup.append("text")
