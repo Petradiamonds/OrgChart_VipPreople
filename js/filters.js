@@ -8,7 +8,7 @@ function getFilters() {
 function update(Select) {
     let PC = Select.value;
     let lv = document.getElementById('LV_DEEP').value;
-    window.location.replace(`index.html?PositionCode=` + PC + `&LV_DEEP=` + lv);
+    window.location.replace(`OrgChart.html?PositionCode=` + PC + `&LV_DEEP=` + lv);
 }
 
 function loadData(URI, TAG) {

@@ -995,7 +995,7 @@ function sPrint() {
     // console.log(innerContents);
     popupWinindow = window.open('', '_blank',);
     popupWinindow.document.open();
-    popupWinindow.document.write('<html><head><meta charset="UTF-8"><title> Company Employees Hierarchy Chart </title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" > <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Roboto"><link rel="stylesheet" href="style.css"><body onload="window.print()">' + innerContents + '</html>');
+    popupWinindow.document.write('<html><head><meta charset="UTF-8"><title> Company Employees Hierarchy Chart </title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" > <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Roboto"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/bootstrap.min.css"><body onload="window.print()">' + innerContents + '</html>');
     popupWinindow.document.close();
 
 }
@@ -1006,7 +1006,7 @@ function sSave() {
         popupWinindow = window.open('', '_blank',);
         popupWinindow.document.open();
         popupWinindow.document.location = "#";
-        popupWinindow.document.write('<html><head><meta charset="UTF-8"><title> Company Employees Hierarchy Chart </title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" > <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Roboto"><link rel="stylesheet" href="style.css"><body><img src="' + pic + '"></html>');
+        popupWinindow.document.write('<html><head><meta charset="UTF-8"><title> Company Employees Hierarchy Chart </title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" > <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Roboto"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/bootstrap.min.css"><body><img src="' + pic + '"></html>');
         popupWinindow.document.close();
     });
 }
