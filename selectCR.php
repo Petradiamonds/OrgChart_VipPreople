@@ -40,13 +40,31 @@
                 </div>
             </div>
 
-            <div class="text-center d-flex flex-column justify-content-center text-light p-5">
-                <button class="btn btn-outline-primary btn-lg my-2" onclick="document.location.href='selectChart.php'">
-                    New from VIP
-                </button>
-                <button class="btn btn-outline-primary btn-lg my-2" onclick="document.location.href='#'">
-                    New From File
-                </button>
+            <div class="container">
+                <h2 class="bg-success text-center rounded">Company Rule Selection</h2>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col">.</div>
+                <div class="col-md-auto">
+                    <form class="mb-5" action="selectItem.php">
+                        <?php
+                            //SQL Connect and generate JSON
+                            $sql = "SELECT CompanyRuleDescription,CompanyRuleID FROM Employee.OrganizationalHierarchyView
+                                    WHERE (EmployeeCode != '')
+                                    GROUP BY CompanyRuleDescription,CompanyRuleID";
+
+                            $sqlargs = array();
+                            require_once 'config/db_query.php'; 
+                            $rootRS =  sqlQuery($sql,$sqlargs);
+
+                            foreach ($rootRS[0] as $rec) {
+                                    print('<input type="checkbox" name="CR[]" id="'.$rec['CompanyRuleID'].'"> <label for="'.$rec['CompanyRuleID'].'">'.$rec['CompanyRuleDescription'].'</label><br>');
+                            }
+                        ?>
+                        <input class="btn btn-outline-primary btn-lg my-2" type="submit" value="Next">
+                    </form>
+                </div>
+                <div class="col">.</div>
             </div>
         </section>
 

@@ -40,14 +40,21 @@
                 </div>
             </div>
 
-            <div class="text-center d-flex flex-column justify-content-center text-light p-5">
-                <button class="btn btn-outline-primary btn-lg my-2" onclick="document.location.href='selectChart.php'">
-                    New from VIP
-                </button>
-                <button class="btn btn-outline-primary btn-lg my-2" onclick="document.location.href='#'">
-                    New From File
-                </button>
-            </div>
+            <form action="selectCR.php" method="get">
+                <div class="container">
+                    <h2 class="bg-success text-center rounded">Chart Type</h2>
+                </div>
+                <div class="row px-3 py-2">
+                    <div class="col text-center">
+                        <input class="form-control btn btn-info" type="submit" value="Linear">
+                        <img style="width:100%" src="img/OrgLine.jpg" alt="Line">
+                    </div>
+                    <div class="col text-center">
+                        <input class="form-control btn btn-info" type="submit" value="Wrapped">
+                        <img style="width:80%" src="img/OrgWrap.png" alt="Wrap">
+                    </div>
+                </div>
+            </form>
         </section>
 
 
