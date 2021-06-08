@@ -164,8 +164,6 @@ function drawOrganizationChart(params) {
                 return res;
             });
 
-        console.log(nodeGroup);
-
         var collapsiblesWrapper =
             nodeEnter.append('g')
                 .attr('data-id', function (v) {
