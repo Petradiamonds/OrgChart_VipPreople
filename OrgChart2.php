@@ -29,6 +29,44 @@
         return($root);
     }
 
+    function AddChildrenLv2($root,$id){
+        // get children
+        $PositionCode = $root[$id]['PositionCode'];
+        $sql = "SELECT DISTINCT 
+                    ID,
+                    ReportsToID,
+                    PositionCode,
+                    PositionLongDescription,
+                    VacancyDate,
+                    Name,
+                    PositionStatus,
+                    HierarchyNameG AS Department,
+                    JobTitle,
+                    CompanyCode,
+                    CompanyDisplay,
+                    CompanyRuleDescription,
+                    EmployeeCode,
+                    ReportsToPositionCode, 
+                    ReportsToEmployeeName,
+                    ReportToEmployeeCode,
+                    ReportsToCompanyCode
+                FROM      Employee.OrganizationalHierarchyView
+                WHERE     ReportsToPositionCode = :Ps;";
+        $sqlargs = array('Ps'=>$PositionCode);
+        require_once 'config/db_query.php'; 
+        $rootRS =  sqlQuery($sql,$sqlargs);
+
+
+        $tmp = $rootRS[0][0]['ReportsToID'];
+        $newRs = [];
+        foreach ($rootRS[0] as $row) {
+            $row['ReportsToID'] = $tmp;
+            array_push($newRs,$row);
+            $tmp = $row['ID'];
+        }
+        
+        return($newRs);
+    }
 
 // If Company number and level is set
 if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
@@ -69,12 +107,12 @@ if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
         // 1 lv deeper
         $root1 = [];
         if ($LV_DEEP > 1){
-            for ($i=0; $i < count($root0); $i++) { 
-                $tmp = AddChildren($root0,$i);
+            for ($i=0; $i < count($root0); $i++) {
+                $tmp = AddChildrenLv2($root0,$i);
                 $root1 = array_merge($root1,$tmp);
             }
         }
-
+        
         $root2 = [];
         if ($LV_DEEP > 2){
             for ($i=0; $i < count($root1); $i++) { 
@@ -88,13 +126,18 @@ if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
 
         $root_json = [];
         for ($i=0; $i < count($root); $i++) { 
+
+            $name = ($root[$i]['VacancyDate'])? "Vacant":$root[$i]['Name'];
+            $formatted =    "<b>".$name."-".$root[$i]['ID']."</b><br>"
+                            .$root[$i]['JobTitle'];
+                            // .$root[$i]['Department'];
+
+
             array_push($root_json,
             [
                 [
                     "v" => $root[$i]['ID'],
-                    "f"=>   "<b>".$root[$i]['Name']."</b><br>"
-                            .$root[$i]['JobTitle']."<br>"
-                            .$root[$i]['Department']
+                    "f"=>   $formatted
                 ],
                 $root[$i]['ReportsToID'],
                 $root[$i]['PositionLongDescription']

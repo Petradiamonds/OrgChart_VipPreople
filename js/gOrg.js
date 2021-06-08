@@ -6,6 +6,7 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
     var data = new google.visualization.DataTable();
     var dataRows = JSON.parse(root_json);
+    console.log(dataRows);
 
     data.addColumn('string', 'Id');
     data.addColumn('string', 'PId');
