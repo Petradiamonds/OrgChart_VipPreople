@@ -57,7 +57,7 @@
         $rootRS =  sqlQuery($sql,$sqlargs);
 
 
-        $tmp = $rootRS[0][0]['ReportsToID'];
+        @ $tmp = $rootRS[0][0]['ReportsToID'];
         $newRs = [];
         foreach ($rootRS[0] as $row) {
             $row['ReportsToID'] = $tmp;
@@ -116,7 +116,7 @@ if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
         $root2 = [];
         if ($LV_DEEP > 2){
             for ($i=0; $i < count($root1); $i++) { 
-                $tmp = AddChildren($root1,$i);
+                $tmp = AddChildrenLv2($root1,$i);
                 $root2 = array_merge($root2,$tmp);
             }
         }
@@ -151,6 +151,7 @@ if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
 
     <head>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>

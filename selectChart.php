@@ -46,7 +46,8 @@
                 </div>
                 <div class="row px-3 py-2">
                     <div class="col text-center">
-                        <input class="form-control btn btn-info" type="submit" value="Linear">
+                        <input class="form-control btn btn-info" type="button" value="Linear"
+                            onclick="document.location.href='OrgChart.html'">
                         <img style="width:100%" src="img/OrgLine.jpg" alt="Line">
                     </div>
                     <div class="col text-center">

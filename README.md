@@ -50,16 +50,16 @@
 - DONE 2021-02-13 made menu responsive with auto update
 - DONE 2021-03-26 updated color theme to match petra Colors
 - DONE 2021-03-26 Fix position name line rapping
+- DONE 2021-06-07 Org to print Wrapped
 
 ## To-Do
 - ADD Color picker before field selector
 - ADD Org Export to Excel button on VIP View
 - ADD Org From Excel button
-- UPDATE Org to print Wrapped
 
 ## Look-At-Implementing
 - NONE
 
+https://phq-7hxllh2.petragroup.local/web_dev/DevTest/OrgChart_VipPreople/OrgChart1.php?LV_DEEP=2&PositionCode=MIDEM001
 https://phq-7hxllh2.petragroup.local/web_dev/DevTest/OrgChart_VipPreople/OrgChart2.php?LV_DEEP=2&PositionCode=MIDEM001
-https://phq-7hxllh2.petragroup.local/web_dev/DevTest/OrgChart_VipPreople/OrgChart1.php?LV_DEEP=2&PositionCode=MIDEM001 
 https://phq-7hxllh2.petragroup.local/web_dev/DevTest/OrgChart_VipPreople/OrgChart.html?PositionCode=OCCHY002&LV_DEEP=2

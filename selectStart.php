@@ -43,7 +43,7 @@
             <div class="container">
                 <h2 class="bg-success text-center rounded">Chart Start Location</h2>
             </div>
-            <form action="OrgChart.html">
+            <form action="OrgChart2.php">
                 <div class="row px-3 py-2">
                     <!-- Selections -->
                     <ul class="navbar-nav">
