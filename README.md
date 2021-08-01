@@ -56,6 +56,7 @@
 - ADD Color picker before field selector
 - ADD Org Export to Excel button on VIP View
 - ADD Org From Excel button
+- CHANGE Management to systems and reporting
 
 ## Look-At-Implementing
 - NONE

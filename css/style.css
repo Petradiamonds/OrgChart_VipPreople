@@ -466,10 +466,16 @@ text {
 
 .blue{
    background: #0c19cf !important;
-   background-image: -webkit-gradient(linear, left top, left bottom, from(#edf7ff), to(#0c19cf)) !important;
+   background-image: -webkit-gradient(linear, left top, left bottom, from(#edf7ff), to(#3f47c2)) !important;
 }
 
 .red{
    background: #e94e4e !important;
    background-image: -webkit-gradient(linear, left top, left bottom, from(#edf7ff), to(#e94e4e)) !important;
+}
+
+@media print {
+   .noprint {
+      visibility: hidden;
+   }
 }

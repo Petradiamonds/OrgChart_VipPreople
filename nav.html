@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+    <div class="container-fluid">
+        <img class="pt-1" style="width: 80px;" src="img/Logo Trans with Border.png" alt="Logo">
+
+        <!-- Selections -->
+        <ul class="navbar-nav">
+            <li class="nav-item pr-1">
+                <select class="form-control-sm" id="LV_DEEP">
+                    <option value="1">1 Level</option>
+                    <option value="2">2 Level</option>
+                    <option value="3">3 Level</option>
+                </select>
+            </li>
+            <li class="nav-item pr-1">
+                <select class="form-control-sm" id="CN" onchange="update(this)"></select>
+            </li>
+            <li class="nav-item pr-1">
+                <select class="form-control-sm" id="PC" onchange="update(this)"></select>
+            </li>
+            <li class="nav-item pr-1">
+                <select class="form-control-sm" id="Name" onchange="update(this)"></select>
+            </li>
+        </ul>
+        <!-- Buttons -->
+        <ul class="navbar-nav">
+            <li class="nav-item pr-1">
+                <button class="btn btn-sm btn-primary btn-fullscreen"
+                    onclick="params.funcs.toggleFullScreen()">Fullscreen <span class='icon' /> <i
+                        class="fa fa-arrows-alt" aria-hidden="true"></i></span></button>
+            </li>
+            <li class="nav-item pr-1">
+                <button class="btn btn-sm btn-primary" onclick="sPrint()"> print <span class='icon' />
+                    <i class="fa fa-print" aria-hidden="true"></i></span></button>
+            </li>
+            <li class="nav-item pr-1">
+                <button class="btn btn-sm btn-primary" onclick="params.funcs.back()"> Back <span class='icon' /> <i
+                        class="fa fa-arrow-left" aria-hidden="true"></i></span></button>
+            </li>
+            <li class="nav-item pr-1">
+                <button class="btn btn-sm btn-primary" onclick="params.funcs.search()"> Search <span class='icon' />
+                    <i class="fa fa-search" aria-hidden="true"></i></span></button>
+            </li>
+            <li class="nav-item pr-1">
+                <button class="btn btn-sm btn-primary" onclick="sSave()"> Save <span class='icon' />
+                    <i class="fa fa-save" aria-hidden="true"></i></span></button>
+            </li>
+        </ul>
+
+    </div>
+</nav>

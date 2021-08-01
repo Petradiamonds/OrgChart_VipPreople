@@ -128,9 +128,9 @@ if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
         for ($i=0; $i < count($root); $i++) { 
 
             $name = ($root[$i]['VacancyDate'])? "Vacant":$root[$i]['Name'];
-            $formatted =    "<b>".$name."-".$root[$i]['ID']."</b><br>"
+
+            $formatted =    "<div style='font-weight:bold;'>".$name." - ".$root[$i]['PositionCode']."</div>"
                             .$root[$i]['JobTitle'];
-                            // .$root[$i]['Department'];
 
 
             array_push($root_json,
@@ -145,18 +145,25 @@ if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
             );
         }
     }
+
 ?>
 
     <html>
 
     <head>
+        <link rel='stylesheet prefetch'
+            href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css'>
+        <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto'>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/bootstrap.bundle.min.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
+        <?php include_once('nav.html'); ?>
         <div id="chart_div"></div>
-        <?php echo "<script>let root_json='" . json_encode($root_json) . "';</script>"; ?>
+        <?php echo  "<script>let root_json='" . json_encode($root_json,JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE) . "';</script>"; ?>
         <script type="text/javascript" src="js/gOrg.js"></script>
     </body>
 
