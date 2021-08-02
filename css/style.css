@@ -458,24 +458,3 @@ text {
    fill: rgb(150, 150, 150);
    font-size: 12px;
 }
-
-.green{
-   background: #54cf0c !important;
-   background-image: -webkit-gradient(linear, left top, left bottom, from(#edf7ff), to(#54cf0c)) !important;
-}
-
-.blue{
-   background: #0c19cf !important;
-   background-image: -webkit-gradient(linear, left top, left bottom, from(#edf7ff), to(#3f47c2)) !important;
-}
-
-.red{
-   background: #e94e4e !important;
-   background-image: -webkit-gradient(linear, left top, left bottom, from(#edf7ff), to(#e94e4e)) !important;
-}
-
-@media print {
-   .no-print {
-      visibility: hidden;
-   }
-}

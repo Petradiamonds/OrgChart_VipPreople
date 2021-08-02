@@ -1,4 +1,11 @@
     <?php
+
+    $LV = 0;
+    if (isset($_POST['LV'])){
+        $LV = $_POST['LV'];
+    }
+
+
     function AddChildren($root,$id){
         // get children
         $PositionCode = $root[$id]['PositionCode'];
@@ -104,22 +111,43 @@ if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
             $root0[0]['ReportsToID'] = '';
         }
 
-        // 1 lv deeper
-        $root1 = [];
-        if ($LV_DEEP > 1){
-            for ($i=0; $i < count($root0); $i++) {
-                $tmp = AddChildrenLv2($root0,$i);
-                $root1 = array_merge($root1,$tmp);
+        if (($LV == "1") || ($LV == "2")){
+            // 1 lv deeper
+            $root1 = [];
+            if ($LV_DEEP > 1){
+                for ($i=0; $i < count($root0); $i++) {
+                    $tmp = AddChildrenLv2($root0,$i);
+                    $root1 = array_merge($root1,$tmp);
+                }
+            }
+        }else{
+            $root1 = [];
+            if ($LV_DEEP > 1){
+                for ($i=0; $i < count($root0); $i++) {
+                    $tmp = AddChildren($root0,$i);
+                    $root1 = array_merge($root1,$tmp);
+                }
             }
         }
         
-        $root2 = [];
-        if ($LV_DEEP > 2){
-            for ($i=0; $i < count($root1); $i++) { 
-                $tmp = AddChildrenLv2($root1,$i);
-                $root2 = array_merge($root2,$tmp);
+        if (($LV == "2") || ($LV == "3")){
+            $root2 = [];
+            if ($LV_DEEP > 2){
+                for ($i=0; $i < count($root1); $i++) { 
+                    $tmp = AddChildrenLv2($root1,$i);
+                    $root2 = array_merge($root2,$tmp);
+                }
+            }
+        }else{
+            $root2 = [];
+            if ($LV_DEEP > 2){
+                for ($i=0; $i < count($root1); $i++) { 
+                    $tmp = AddChildren($root1,$i);
+                    $root2 = array_merge($root2,$tmp);
+                }
             }
         }
+
 
         // join all LVs
         $root = array_merge($root0,$root1,$root2);
@@ -158,7 +186,7 @@ if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/html2canvas.min.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/gChart.css">
     </head>
 
     <body>
@@ -170,13 +198,15 @@ if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
 
     <script>
 function sPrint() {
+    let w = document.body.scrollWidth;
+    let h = document.body.scrollHeight;
     html2canvas(document.querySelector("#chart_div")).then(canvas => {
         // document.body.appendChild(canvas.toDataURL();)
-        var myWindow = window.open("", "", "width=347.7200,height=755.9100");
+        var myWindow = window.open("", "", `width=${w},height=${h}`);
         myWindow.document.body.appendChild(canvas);
     }, {
-        width: 2000,
-        height: 1800
+        width: w,
+        height: h
     });
 }
     </script>
