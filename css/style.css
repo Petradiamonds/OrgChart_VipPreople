@@ -475,7 +475,7 @@ text {
 }
 
 @media print {
-   .noprint {
+   .no-print {
       visibility: hidden;
    }
 }

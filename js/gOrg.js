@@ -22,6 +22,7 @@ function drawChart() {
     };
 
     chart.draw(data, options);
+
     var Greens = document.querySelectorAll('*[id^="green"]');
     Greens.forEach(addGreen => {
         addGreen.parentElement.classList.toggle("green");
@@ -36,5 +37,4 @@ function drawChart() {
     Reds.forEach(red => {
         red.parentElement.classList.toggle("red");
     });
-
 }

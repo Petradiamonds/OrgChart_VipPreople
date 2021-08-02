@@ -174,6 +174,7 @@ if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
         <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto'>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/html2canvas.min.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -184,5 +185,18 @@ if (isset($_GET['PositionCode']) && isset($_GET['LV_DEEP']) )
         <?php echo  "<script>let root_json='" . json_encode($root_json,JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE) . "';</script>"; ?>
         <script type="text/javascript" src="js/gOrg.js"></script>
     </body>
+
+    <script>
+function sPrint() {
+    html2canvas(document.querySelector("#chart_div")).then(canvas => {
+        // document.body.appendChild(canvas.toDataURL();)
+        var myWindow = window.open("", "", "width=347.7200,height=755.9100");
+        myWindow.document.body.appendChild(canvas);
+    }, {
+        width: 2000,
+        height: 1800
+    });
+}
+    </script>
 
     </html>
