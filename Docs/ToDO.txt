@@ -1,0 +1,96 @@
+Oop - 
+Myne - 
+
+10 - Markers block (Search Filter)
+10 - Markers text (Search Filter)
+
+Add Header Text
+Add Picture left & right
+
+SHOW FIELD NAME tick box:
+
+Direct Reports to Count
+Total Reprots to Count
+Complemment Grade (Paterson C2) | StrengGrade (C3)
+ KnownAsName | 
+ Surname | 
+ department HR - Human Resources) |
+ section |
+
+ PositionCode (GITMA001)
+ PositionLongDescription (Group IT Manager)
+ JobTitle (Group IT Manager)
+ Name (Mr KV Afrique)
+ PositionStatus (Filled / Vacant) | PositionStatusCode (FL)
+ 
+ VacancyDate ()
+ CompanyCode (CDM)
+ CompanyDisplay (Cullinan Diamond Mine (Pt)
+ CompanyRuleCode (CDMPETRAHQ)
+ CompanyRuleDescription (CDM Petra HQ)
+ 
+ EmployeeCode (10000003)
+ EmployeeGender (M)
+ EmployeeGroup ()
+ EmployeePhoto (�PNG  IHDR�p)
+ EmployeeEquityOccupationalLevel (Senior Mgmt)
+ EmployeeEquityOccupationalCategory (Off & Mgrs)
+ EmployeeEquityTypeOfEmployment (Permanent)
+ EmployeeEquityJobFunction (Support)
+ EmployeeSkillsOccupationalLevel (Senior Mgmt)
+ EmployeeSkillsOccupationalCategory (Off & Mgrs)
+ EmployeeSkillsOFOCode (Production / Operations M)
+ EmployeeSkillsOFOCategoryCode (MANAGERS)
+ 
+ NatureOfContract (Permanent)
+ JobGrade (Paterson E1)
+ JobGeneral (Complement)
+ LevelOfWork ()
+ NatureOfPosition (Permanent)
+ ReportsToPositionCode (GMCDM001)
+
+ PositionEquityGender ()
+ PositionEquityRace ()
+ PositionEquityOccupationalLevel (Senior Mgmt)
+ PositionEquityOccupationalCategory (Off & Mgrs)
+ PositionEquityTypeOfEmployment ()
+ PositionEquityJobFunction (Support)
+ PositionSkillsOccupationalLevel (Senior Mgmt)
+ PositionSkillsOccupationalCategory (Off & Mgrs)
+ PositionSkillsOFOCode (Production / Operations M)
+ PositionStartDate (2013-03-01 00:00:00)
+ 
+ HierarchyName ()
+ HierarchyNameA (OP - Opex)
+ HierarchyNameB (ICT - Information & Commu)
+ HierarchyNameC (ALL - All Employee)
+ HierarchyNameD (SUR - Surface)
+ HierarchyNameE (5DAY - 5 Day)
+ HierarchyNameF (GMCDM001 - Juan Kemp)
+ HierarchyNameG (ICT - Information & Commu)
+ HierarchyNameH (PERM - Permanent Employee)
+ HierarchyNameI ()
+ 
+ Complete JobTitle vs Stength jobtile 
+
+#ops
+PositionCode (GITMA001)
+PositionLongDescription (Group IT Manager) | Fieldname:JobTitle
+Name (Mr KV Afrique) | knowas & surname
+Stength grade vs compelet grade 197 
+ Complete JobTitle vs Stength jobtile
+EmployeeCode
+NatureOfContract (Permanent)
+??perment / FTC on employee & posistion | 
+HierarchyName (000HRRE00 - Human Resourc)
+ HierarchyNameA (OP - Opex)
+ HierarchyNameB (HR - Human Resources)
+ HierarchyNameC (ALL - All Employee)
+ HierarchyNameD (SUR - Surface)
+ HierarchyNameE (5DAY - 5 Day)
+ HierarchyNameF (HRMAN002 - Etheline Laura)
+ HierarchyNameG (HR - Human Resources)
+ HierarchyNameH (PERM - Permanent Employee)
+ HierarchyNameI (50000504 - Charlene Du Pr)
+  
+ #Org to power point
