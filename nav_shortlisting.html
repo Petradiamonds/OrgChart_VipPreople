@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-0 no-print">
+    <div class="container-fluid">
+        <img class="py-1" style="width: 80px;" src="img/Logo.png" alt="Logo">
+        <!-- Selections -->
+        <ul class="navbar-nav  pt-3">
+            <li class="nav-item pr-1">
+                Shortlisting OrgChart
+            </li>
+            <li class="nav-item pr-1">
+                <form class="navbar-form" method="POST">
+                    <input type="hidden" name="LV" value="0">
+                    <button class="btn btn-sm btn-primary">
+                        <span class='icon'>
+                            <i class="fa fa-cancel" aria-hidden="true"></i>
+                            No Wrap
+                        </span>
+                    </button>
+                </form>
+            </li>
+            <li class="nav-item pr-1">
+                <form class="navbar-form" method="POST">
+                    <input type="hidden" name="LV" value="1">
+                    <button class="btn btn-sm btn-primary">
+                        <span class='icon'>
+                            <i class="fa fa-sitemap" aria-hidden="true"></i>
+                            L1 Wrap
+                        </span>
+                    </button>
+                </form>
+            </li>
+            <li class="nav-item pr-1">
+                <form class="navbar-form" method="POST">
+                    <input type="hidden" name="LV" value="3">
+                    <button class="btn btn-sm btn-primary">
+                        <span class='icon'>
+                            <i class="fa fa-align-center" aria-hidden="true"></i>
+                            L2 Wrap
+                        </span>
+                    </button>
+                </form>
+            </li>
+            <li class="nav-item pr-1">
+                <form class="navbar-form" method="POST">
+                    <input type="hidden" name="LV" value="2">
+                    <button class="btn btn-sm btn-primary">
+                        <span class='icon'>
+                            <i class="fa fa-outdent" aria-hidden="true"></i>
+                            All Wrap
+                        </span>
+                    </button>
+                </form>
+            </li>
+        </ul>
+        <!-- Buttons -->
+        <ul class="navbar-nav">
+            <li class="nav-item pr-1">
+                <button class="btn btn-sm btn-primary" onclick="sPrint()"><span class='icon'>
+                        <i class="fa fa-print" aria-hidden="true"></i> Print </span></button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
