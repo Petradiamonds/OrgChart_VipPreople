@@ -1,11 +1,30 @@
 version: "3.3"
+
+networks:
+  web-network:
+
 services:
-  app-server:
+  php-server:
     build:
-      dockerfile: php.Dockerfile
       context: .
-    restart: on-failure
+      dockerfile: php.Dockerfile
+    container_name: php-server
+    restart: always
     volumes:
       - "./html/:/var/www/html/"
+    networks:
+      - web-network
+  app-server:
+    build:
+      context: .
+      dockerfile: nginx.dockerfile
+    container_name: app-server
     ports:
       - "8080:80"
+    volumes:
+      - "./html/:/var/www/html/"
+    depends_on:
+      - php-server
+    networks:
+      - web-network
+    
