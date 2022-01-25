@@ -1,0 +1,114 @@
+{
+    "name": "Mr D Clark",
+    "CN": "10000023",
+    "PositionCode": "MIDEM001",
+    "imageUrl": "img\/Profile-Icon.png",
+    "area": "MIN - Mining",
+    "profileUrl": "http:\/\/example.com\/employee\/profile",
+    "office": "office name here",
+    "tags": "MIDEM001",
+    "isLoggedUser": false,
+    "unit": {
+        "type": "business",
+        "value": " "
+    },
+    "positionName": "Mine Divisional Engineer - Mining",
+    "children": [
+        {
+            "name": "Vacant",
+            "CN": null,
+            "PositionCode": "ENGIM001",
+            "imageUrl": "img\/Profile-Icon.png",
+            "area": null,
+            "profileUrl": "http:\/\/example.com\/employee\/profile",
+            "office": "office name here",
+            "tags": "ENGIM001",
+            "isLoggedUser": false,
+            "unit": {
+                "type": "business",
+                "value": "2021-12-01 00:00:00 Vacant"
+            },
+            "positionName": "Engineering Intern - Mechanical"
+        },
+        {
+            "name": "Vacant",
+            "CN": null,
+            "PositionCode": "ENGIE001",
+            "imageUrl": "img\/Profile-Icon.png",
+            "area": null,
+            "profileUrl": "http:\/\/example.com\/employee\/profile",
+            "office": "office name here",
+            "tags": "ENGIE001",
+            "isLoggedUser": false,
+            "unit": {
+                "type": "business",
+                "value": "2020-02-01 00:00:00 "
+            },
+            "positionName": "Engineering Intern - Electrical"
+        },
+        {
+            "name": "Vacant",
+            "CN": null,
+            "PositionCode": "PLANN004",
+            "imageUrl": "img\/Profile-Icon.png",
+            "area": null,
+            "profileUrl": "http:\/\/example.com\/employee\/profile",
+            "office": "office name here",
+            "tags": "PLANN004",
+            "isLoggedUser": false,
+            "unit": {
+                "type": "business",
+                "value": "2020-02-01 00:00:00 "
+            },
+            "positionName": "Planner"
+        },
+        {
+            "name": "Mr NJ Coetsee",
+            "CN": "50000481",
+            "PositionCode": "MAIOV004",
+            "imageUrl": "img\/Profile-Icon.png",
+            "area": "MIN - Mining",
+            "profileUrl": "http:\/\/example.com\/employee\/profile",
+            "office": "office name here",
+            "tags": "MAIOV004",
+            "isLoggedUser": false,
+            "unit": {
+                "type": "business",
+                "value": " "
+            },
+            "positionName": "Maintenance Overseer"
+        },
+        {
+            "name": "Mr WP Van Molendorff",
+            "CN": "50000800",
+            "PositionCode": "ENGOV001",
+            "imageUrl": "img\/Profile-Icon.png",
+            "area": "ENG - Engineering",
+            "profileUrl": "http:\/\/example.com\/employee\/profile",
+            "office": "office name here",
+            "tags": "ENGOV001",
+            "isLoggedUser": false,
+            "unit": {
+                "type": "business",
+                "value": " "
+            },
+            "positionName": "Engineering Overseer"
+        },
+        {
+            "name": "Ms S Mduduma",
+            "CN": "10000169",
+            "PositionCode": "SCENG003",
+            "imageUrl": "img\/Profile-Icon.png",
+            "area": "MIN - Mining",
+            "profileUrl": "http:\/\/example.com\/employee\/profile",
+            "office": "office name here",
+            "tags": "SCENG003",
+            "isLoggedUser": false,
+            "unit": {
+                "type": "business",
+                "value": " "
+            },
+            "positionName": "Section Engineer"
+        }
+    ]
+}
