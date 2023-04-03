@@ -10,9 +10,30 @@
         <link rel="stylesheet" href="css/gChart.css">
     </head>
     <body>
-        <?php include_once('nav.html'); ?>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 no-print">
+            <div class="container-fluid">
+                <img class="py-1" style="width: 80px;" src="img/Logo.png" alt="Logo">
+                <!-- Selections -->
+                <ul class="navbar-nav  pt-3">
+                    <li class="nav-item pr-1">
+                    <label class="btn btn-lg bg-info float-left align-middle">
+                        <span class="align-middle pr-1 fas fa-file-import"></span>Import file
+                        <input type="file" id="file-input" hidden>
+                    </label>
+                    </li>
+                </ul>
+                <!-- Buttons -->
+                <ul class="navbar-nav">
+                    <li class="nav-item pr-1">
+                        <button class="btn btn-sm btn-primary" onclick="sPrint()"><span class='icon'>
+                                <i class="fa fa-print" aria-hidden="true"></i> Print </span></button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <div id="chart_div"></div>
-        <?php echo  "<script>let root_json='" . escapeshellcmd( file_get_contents('orgdata.json')) . "';</script>"; ?>
+        <?php echo  "<script>let root_json='" . escapeshellcmd( file_get_contents('OrgDataBlank.json')) . "';</script>"; ?>
         <script type="text/javascript" src="js/gOrg.js"></script>
     </body>
 
@@ -29,5 +50,7 @@ function sPrint() {
     });
 }
     </script>
+    <script src="js/xlsx.full.min.js"></script>
+    <script src="js/importOrg.js"></script>
 
     </html>

@@ -24,8 +24,7 @@
         <!-- NAV START -->
         <nav class="navbar navbar-dark bg-dark rounded">
             <a class="navbar-brand ml-1" href="index.php">
-                <img src="img/icon.png" width="30" height="30" class="d-inline-block align-top  bg-white p-1 rounded"
-                    alt="Logo">
+                <img src="img/icon.png" width="30" height="30" class="d-inline-block align-top  bg-white p-1 rounded" alt="Logo">
                 VIP Hierarchy Builder
             </a>
         </nav>
@@ -47,24 +46,24 @@
                 <div class="col-md-auto">
                     <form class="mb-5" action="selectStart.php">
                         <?php
-                            //SQL Connect and generate JSON
-                            $sql = "SELECT TOP 1 *
+                        //SQL Connect and generate JSON
+                        $sql = "SELECT TOP 1 *
                                     FROM    Employee.OrganizationalHierarchyView
-                                    WHERE (EmployeeCode = '50000504')
+                                    WHERE (EmployeeCode = '10000106')
                                     ORDER BY ID DESC";
 
-                            $sqlargs = array();
-                            require_once 'config/db_query.php'; 
-                            $rootRS =  sqlQuery($sql,$sqlargs);
+                        $sqlargs = array();
+                        require_once 'config/db_query.php';
+                        $rootRS =  sqlQuery($sql, $sqlargs);
 
-                            $checked = ['PositionCode','Name','JobTitle'];
-                            foreach (array_keys($rootRS[0][0]) as $rec) {
-                                if(in_array($rec,$checked)){
-                                    print('<input type="checkbox" name="'.$rec.'" id="'.$rec.'" checked> <label for="'.$rec.'">'.$rec.'</label> <span class="text-secondary">('.substr($rootRS[0][0][$rec],0,25).')</span><br>');
-                                }else{
-                                    print('<input type="checkbox" name="'.$rec.'" id="'.$rec.'"> <label for="'.$rec.'">'.$rec.'</label> <span class="text-secondary">('.substr($rootRS[0][0][$rec],0,25).')</span><br>');
-                                }
+                        $checked = ['PositionCode', 'Name', 'JobTitle'];
+                        foreach (array_keys($rootRS[0][0]) as $rec) {
+                            if (in_array($rec, $checked)) {
+                                print('<input type="checkbox" name="' . $rec . '" id="' . $rec . '" checked> <label for="' . $rec . '">' . $rec . '</label> <span class="text-secondary">(' . substr($rootRS[0][0][$rec], 0, 25) . ')</span><br>');
+                            } else {
+                                print('<input type="checkbox" name="' . $rec . '" id="' . $rec . '"> <label for="' . $rec . '">' . $rec . '</label> <span class="text-secondary">(' . substr($rootRS[0][0][$rec], 0, 25) . ')</span><br>');
                             }
+                        }
                         ?>
                         <input class="btn btn-outline-primary btn-lg my-2" type="submit" value="Next">
                     </form>

@@ -24,8 +24,7 @@
         <!-- NAV START -->
         <nav class="navbar navbar-dark bg-dark rounded">
             <a class="navbar-brand ml-1" href="index.php">
-                <img src="img/icon.png" width="30" height="30" class="d-inline-block align-top  bg-white p-1 rounded"
-                    alt="Logo">
+                <img src="img/icon.png" width="30" height="30" class="d-inline-block align-top  bg-white p-1 rounded" alt="Logo">
                 VIP Hierarchy Builder
             </a>
         </nav>
@@ -43,7 +42,7 @@
             <div class="container">
                 <h2 class="bg-success text-center rounded">Chart Start Location</h2>
             </div>
-            <form action="OrgChart2.php">
+            <form action="OrgChart2.php" method="GET">
                 <div class="row px-3 py-2">
                     <!-- Selections -->
                     <ul class="navbar-nav">
@@ -64,15 +63,15 @@
                                 Order By EmployeeCode ASC;";
 
                         $sqlargs = array();
-                        require_once 'config/db_query.php'; 
-                        $rootRS =  sqlQuery($sql,$sqlargs);
-                    ?>
+                        require_once 'config/db_query.php';
+                        $rootRS =  sqlQuery($sql, $sqlargs);
+                        ?>
                         <li class="nav-item pr-1">
                             <select class="form-control-sm" name="PositionCode" id="CN">
                                 <option class="form-control-sm" Value="">Please Select</option>
                                 <?php
                                 foreach ($rootRS[0] as $rec) {
-                                    echo '<option class="form-control-sm" Value="'.$rec["PositionCode"].'">'.$rec["EmployeeCode"].'</option>';
+                                    echo '<option class="form-control-sm" Value="' . $rec["PositionCode"] . '">' . $rec["EmployeeCode"] . '</option>';
                                 }
                                 ?>
                             </select>
@@ -88,15 +87,15 @@
                                 Order By PositionCode ASC;";
 
                         $sqlargs = array();
-                        require_once 'config/db_query.php'; 
-                        $rootRS =  sqlQuery($sql,$sqlargs);
-                    ?>
+                        require_once 'config/db_query.php';
+                        $rootRS =  sqlQuery($sql, $sqlargs);
+                        ?>
                         <li class="nav-item pr-1">
-                            <select class="form-control-sm" id="PC">
+                            <select class="form-control-sm" name="Position" id="PC">
                                 <option class="form-control-sm" Value="">Please Select</option>
                                 <?php
                                 foreach ($rootRS[0] as $rec) {
-                                    echo '<option class="form-control-sm" Value="'.$rec["PositionCode"].'">'.$rec["PositionCode"].'</option>';
+                                    echo '<option class="form-control-sm" Value="' . $rec["PositionCode"] . '">' . $rec["PositionCode"] . '</option>';
                                 }
                                 ?>
                             </select>
@@ -106,21 +105,29 @@
                         OR
                         <?php
                         //SQL Connect and generate JSON
-                        $sql = "SELECT DISTINCT Name,PositionCode
-                                FROM    Employee.OrganizationalHierarchyView
-                                WHERE Name IS NOT NULL
-                                ORDER BY Name ASC;";
+                        $sql = "Select Distinct
+                        Employee.OrganizationalHierarchyView.PositionCode,
+                        concat(Employee.EmployeeDetail.KnownAsName,' ',Employee.EmployeeDetail.LastName) as 'Name',
+                        KnownAsName
+                      From
+                        Employee.OrganizationalHierarchyView Left Join
+                        Employee.EmployeeDetail On Employee.EmployeeDetail.EmployeeCode =
+                          Employee.OrganizationalHierarchyView.EmployeeCode
+                      Where
+                        Employee.EmployeeDetail.KnownAsName Is Not Null
+                      Order By
+                        Employee.EmployeeDetail.KnownAsName;";
 
                         $sqlargs = array();
-                        require_once 'config/db_query.php'; 
-                        $rootRS =  sqlQuery($sql,$sqlargs);
-                    ?>
+                        require_once 'config/db_query.php';
+                        $rootRS =  sqlQuery($sql, $sqlargs);
+                        ?>
                         <li class="nav-item pr-1">
-                            <select class="form-control-sm" id="CN">
+                            <select class="form-control-sm" id="CN" name="Employee">
                                 <option class="form-control-sm" Value="">Please Select</option>
                                 <?php
                                 foreach ($rootRS[0] as $rec) {
-                                    echo '<option class="form-control-sm" Value="'.$rec["Name"].'">'.$rec["Name"].'</option>';
+                                    echo '<option class="form-control-sm" Value="' . $rec["PositionCode"] . '">' . $rec["Name"] . '</option>';
                                 }
                                 ?>
                             </select>
