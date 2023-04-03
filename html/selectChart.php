@@ -24,8 +24,7 @@
         <!-- NAV START -->
         <nav class="navbar navbar-dark bg-dark rounded">
             <a class="navbar-brand ml-1" href="index.php">
-                <img src="img/icon.png" width="30" height="30" class="d-inline-block align-top  bg-white p-1 rounded"
-                    alt="Logo">
+                <img src="img/icon.png" width="30" height="30" class="d-inline-block align-top  bg-white p-1 rounded" alt="Logo">
                 VIP Hierarchy Builder
             </a>
         </nav>
@@ -40,22 +39,21 @@
                 </div>
             </div>
 
-            <form action="selectCR.php" method="get">
-                <div class="container">
-                    <h2 class="bg-success text-center rounded">Chart Type</h2>
+
+            <div class="container">
+                <h2 class="bg-success text-center rounded">Chart Type</h2>
+            </div>
+            <div class="row px-3 py-2">
+                <div class="col text-center">
+                    <input class="form-control btn btn-info" type="button" value="Linear" onclick="document.location.href='OrgChart.html'">
+                    <img style="width:100%" src="img/OrgLine.jpg" alt="Line">
                 </div>
-                <div class="row px-3 py-2">
-                    <div class="col text-center">
-                        <input class="form-control btn btn-info" type="button" value="Linear"
-                            onclick="document.location.href='OrgChart.html'">
-                        <img style="width:100%" src="img/OrgLine.jpg" alt="Line">
-                    </div>
-                    <div class="col text-center">
-                        <input class="form-control btn btn-info" type="submit" value="Wrapped">
-                        <img style="width:80%" src="img/OrgWrap.png" alt="Wrap">
-                    </div>
+                <div class="col text-center">
+                    <input class="form-control btn btn-info" type="button" value="Wrapped" onclick="document.location.href='selectStart.php'">
+                    <img style="width:80%" src="img/OrgWrap.png" alt="Wrap">
                 </div>
-            </form>
+            </div>
+
         </section>
 
 

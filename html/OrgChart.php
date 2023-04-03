@@ -14,6 +14,7 @@
                     ReportsToID,
                     PositionCode,
                     PositionLongDescription,
+                    REPLACE(JobGrade,'Paterson ','') as JobGrade,
                     VacancyDate,
                     Name,
                     PositionStatus,
@@ -26,17 +27,10 @@
                     ReportsToPositionCode, 
                     ReportsToEmployeeName,
                     ReportToEmployeeCode,
-                    ReportsToCompanyCode,
-                    JobTitle,
-                    EmployeeGender,
-                    NatureOfContract,
-                    JobGeneral,
-                    NatureOfPosition,
-                    PositionEquityRace
+                    ReportsToCompanyCode
                     FROM      Employee.OrganizationalHierarchyView
                 WHERE     ReportsToPositionCode = :Ps
-                AND       NatureOfPosition is not null
-                AND       PositionStatusCode <> 'DM'";";
+                AND       PositionStatusCode <> 'DM'";
         $sqlargs = array('Ps' => $PositionCode);
         require_once 'config/db_query.php';
         $rootRS =  sqlQuery($sql, $sqlargs);
@@ -53,6 +47,7 @@
                     ReportsToID,
                     PositionCode,
                     PositionLongDescription,
+                    REPLACE(JobGrade,'Paterson ','') as JobGrade,
                     VacancyDate,
                     Name,
                     PositionStatus,
@@ -65,13 +60,7 @@
                     ReportsToPositionCode, 
                     ReportsToEmployeeName,
                     ReportToEmployeeCode,
-                    ReportsToCompanyCode,
-                    JobTitle,
-                    EmployeeGender,
-                    NatureOfContract,
-                    JobGeneral,
-                    NatureOfPosition,
-                    PositionEquityRace
+                    ReportsToCompanyCode
                 FROM      Employee.OrganizationalHierarchyView
                 WHERE     ReportsToPositionCode = :Ps;";
         $sqlargs = array('Ps' => $PositionCode);
@@ -115,6 +104,7 @@
                     ReportsToID,
                     PositionCode,
                     PositionLongDescription,
+                    REPLACE(JobGrade,'Paterson ','') as JobGrade,
                     VacancyDate,
                     Name,
                     PositionStatus,
@@ -127,13 +117,7 @@
                     ReportsToPositionCode, 
                     ReportsToEmployeeName,
                     ReportToEmployeeCode,
-                    ReportsToCompanyCode,
-                    JobTitle,
-                    EmployeeGender,
-                    NatureOfContract,
-                    JobGeneral,
-                    NatureOfPosition,
-                    PositionEquityRace
+                    ReportsToCompanyCode
                 FROM    Employee.OrganizationalHierarchyView
                 WHERE   (PositionCode = :Ps);";
         $sqlargs = array('Ps' => $PositionCode);
@@ -191,52 +175,26 @@
 
             $name = ($root[$i]['VacancyDate']) ? "Vacant" : $root[$i]['Name'];
 
-            // JobTitle,
-            // EmployeeGender,
-            // NatureOfContract,
-            // JobGeneral,
-            // NatureOfPosition
-
-            $formatted =    "<div style='font-weight:bold;'>" . $name . " - " . $root[$i]['PositionCode'] . "</div>"
-                . $root[$i]['JobTitle'] .
-                "<div><br>Gender:" . $root[$i]['EmployeeGender'] .
-                "<br>NOC:" . $root[$i]['NatureOfContract'] .
-                "<br>NOP:" . $root[$i]['NatureOfPosition'] .
-                "<br>JobGeneral:" . $root[$i]['JobGeneral'] .
-                "<br>Race:" . $root[$i]['PositionEquityRace'] . "</div>";
+            $formatted =    "<div style='font-weight:bold;'>" . $name . " - " . $root[$i]['JobGrade'] . "</div>"
+                . $root[$i]['JobTitle'];
 
             if ($name == "Vacant") {
-                $formatted =    "<div id='green' style='color:red;font-weight:bold;'>" . $name . " - " . $root[$i]['PositionCode'] . "</div>"
-                    . $root[$i]['JobTitle'] .
-                    "<br>Gender:" . $root[$i]['EmployeeGender'] .
-                    "<br>NOC:" . $root[$i]['NatureOfContract'] .
-                    "<br>NOP:" . $root[$i]['NatureOfPosition'] .
-                    "<br>JobGeneral:" . $root[$i]['JobGeneral'] .
-                    "<br>Race:" . $root[$i]['PositionEquityRace'] . "</div>";
+                $formatted =    "<div id='green' style='color:red;font-weight:bold;'>" . $name . " - " . $root[$i]['JobGrade'] . "</div>"
+                    . $root[$i]['JobTitle'];
                 // .$root[$i]['Department'];
             }
 
-            if ($root[$i]['PositionCode'] == "Vacant") {
-                $formatted =    "<div id='green' style='color:red;font-weight:bold;'>" . $name . " - " . $root[$i]['PositionCode'] . "</div>"
-                    . $root[$i]['JobTitle'] .
-                    "<br>Gender:" . $root[$i]['EmployeeGender'] .
-                    "<br>NatureOfContract:" . $root[$i]['NatureOfContract'] .
-                    "<br>NatureOfPosition:" . $root[$i]['NatureOfPosition'] .
-                    "<br>JobGeneral:" . $root[$i]['JobGeneral'] . "</div>";
+            if ($name == "Mr WP Van Molendorff") {
+                $formatted =    "<div id='red' style='font-weight:bold;'>" . $name . " - " . $root[$i]['JobGrade'] . "</div>"
+                    . $root[$i]['JobTitle'];
                 // .$root[$i]['Department'];
             }
 
-            //     if ($name == "Mr WP Van Molendorff"){
-            //     $formatted =    "<div id='red' style='font-weight:bold;'>".$name." - ".$root[$i]['PositionCode']."</div>"
-            //                 .$root[$i]['JobTitle'];
-            //                 // .$root[$i]['Department'];
-            // }
-
-            //     if ($root[$i]['JobTitle'] == "Engineering Foreman"){
-            //     $formatted =    "<div id='blue' style='color:blue;font-weight:bold;'>".$name." - ".$root[$i]['PositionCode']."</div>"
-            //                 .$root[$i]['JobTitle'];
-            //                 // .$root[$i]['Department'];
-            // }
+            if ($root[$i]['JobTitle'] == "Engineering Foreman") {
+                $formatted =    "<div id='blue' style='color:blue;font-weight:bold;'>" . $name . " - " . $root[$i]['JobGrade'] . "</div>"
+                    . $root[$i]['JobTitle'];
+                // .$root[$i]['Department'];
+            }
 
 
             array_push(
@@ -268,7 +226,7 @@
     </head>
 
     <body>
-        <?php include_once('nav_shortlisting.html'); ?>
+        <?php include_once('nav.html'); ?>
         <div id="chart_div"></div>
         <?php echo  "<script>let root_json='" . json_encode($root_json, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE) . "';</script>"; ?>
         <script type="text/javascript" src="js/gOrg.js"></script>
@@ -276,13 +234,15 @@
 
     <script>
         function sPrint() {
+            let w = document.body.scrollWidth;
+            let h = document.body.scrollHeight;
             html2canvas(document.querySelector("#chart_div")).then(canvas => {
-                // document.body.appendChild(canvas.toDataURL();)
-                var myWindow = window.open("", "", "width=347.7200,height=755.9100");
+                // location.href = canvas.toDataURL();
+                var myWindow = window.open("", "", `width=${w},height=${h}`);
                 myWindow.document.body.appendChild(canvas);
             }, {
-                width: 2000,
-                height: 1800
+                // width: w,
+                // height: h
             });
         }
     </script>
